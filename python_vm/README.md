@@ -107,7 +107,7 @@ We need to be able to tell uWSGI to apply certain settings outlined in the mypro
 By default, uWSGI will use the 'uwsgi' protocol, which is very fast. Nginx natively understands this protocol, which helps greatly when experiencing large amounts of load.
 
 ## systemd Unit File (myproject.service)
-The `myproject.service` file is the first file that is not recommended to copy from the GitHub repository. This is due to there being a lot of specific file paths that will be different on each configuration. Included below is a template:
+**Note:** The `myproject.service` file is the first file that is not recommended to copy from the GitHub repository. This is due to there being a lot of specific file paths that will be different on each configuration. Included below is a template:
 ```
 # Template from DigitalOcean
 # <user> = username of account on server
@@ -126,7 +126,7 @@ ExecStart=/home/<user>/myproject/myprojectenv/bin/uwsgi --ini myproject.ini
 [Install]
 WantedBy=multi-user.target
 ```
-Once the `.service` file is created, we can start the uWSGI service and set it to start at boot.
+Once the `myproject.service` file is created, we can start the uWSGI service and set it to start at boot.
 ```bash
 $ sudo systemctl start myproject
 $ sudo systemctl enable myproject
