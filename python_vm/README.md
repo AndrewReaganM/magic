@@ -176,7 +176,7 @@ You should now be able to access the website!
 http://yourdomain_or_ip/
 ```
 
-## troubleshooting
+## Troubleshooting
 Please look in the following locations for error/connection logs:
 ```bash
 $ sudo less /var/log/nginx/error.log
