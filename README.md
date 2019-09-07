@@ -33,3 +33,25 @@ Additionally, the Python implementation uses the Web Server Gateway Interface (W
 Nginx is more than capable of hosting this simple site, but it was selected for its simplicity, flexibility, and excellent performance under high load. Do note that in the App Engine implementation Nginx is not explicitly implemented, but is the default web server for App Engine applications.
 
 #### Java
+
+## Performance
+The Python VM version on a Google Compute Engine VM n1-standard-2 instance is capable of handling a little over 3000 requests/sec, and in testing seemed limited only by CPU power. Here is a `wrk` benchmark on aforementioned instance.
+
+```bash
+MacBook-Pro:~ andrewm$ wrk -t2 -c400 -d60s --latency http://pyvm.andrewreaganm.me/
+Running 1m test @ http://pyvm.andrewreaganm.me/
+  2 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    73.69ms   40.35ms   1.63s    93.79%
+    Req/Sec     1.72k   301.03     2.30k    87.73%
+  Latency Distribution
+     50%   65.09ms
+     75%   80.65ms
+     90%   99.09ms
+     99%  212.33ms
+  202983 requests in 1.00m, 34.05MB read
+  Socket errors: connect 151, read 0, write 0, timeout 0
+Requests/sec:   3378.26
+Transfer/sec:    580.25KB
+
+```
