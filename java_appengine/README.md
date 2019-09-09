@@ -19,7 +19,9 @@ $ apt update
 $ sudo apt install
 ```
 
-## Use this heading for other sections
+## Developing with Java for AppEngine
+Use the following guide to configure Eclipse for Java AppEngine development and deployment: https://cloud.google.com/eclipse/docs/quickstart
+This guide runs through the process of creating a new App Engine project: https://cloud.google.com/eclipse/docs/creating-new-webapp
 
 You should now be able to access the website!
 ```url
