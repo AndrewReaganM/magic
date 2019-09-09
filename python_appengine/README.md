@@ -1,7 +1,7 @@
 # MAG(i)C Random in Java on Google App Engine
 
 ## Overview
-The Google App Engine version of the MAG(i)C Random Number Generator is virtually effort free to deploy.
+The Google App Engine version of the MAG(i)C Random Number Generator is very easy to deploy. Below you will find documentation on each of the files, as well as how to install Random on your own App Engine project.
 
 ## Prerequisites
 * Google App Engine Account with valid billing
