@@ -24,8 +24,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    """Return a friendly HTTP greeting."""
-    return str(random.randint(0,1000000))
+    """Return a random integer as a string"""
+    return str(random.randint(1,1000000))
 
 
 if __name__ == '__main__':
