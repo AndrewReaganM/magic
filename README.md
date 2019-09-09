@@ -1,6 +1,6 @@
 # MAG(i)C Pseudo-random Number Generator
 
-This pseudo-random number generator generates integers between 0 and 1,000,000. This feature is implemented on two platforms in two different languages, Java and Python on Google App Engine instances and Google Compute VMs.
+This pseudo-random number generator generates integers between 1 and 1,000,000. This feature is implemented on two platforms in two different languages, Java and Python on Google App Engine instances and Google Compute VMs.
 
 The software include in this repository meets the following requirements:
 * For every 1000 numbers generated, at least 750 of them are unique.
