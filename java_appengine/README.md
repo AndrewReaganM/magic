@@ -1,35 +1,31 @@
-# MAG(i)C Random in Java on Ubuntu 18.04 LTS
+# MAG(i)C Random on Google AppEngine
 
 ## Overview
-
+A working version of this software can be found at
+```url
+https://software-engineering-250801.appspot.com/
+```
 
 ## Prerequisites
-* Ubuntu 18.04 LTS server
 
 ## Software Versions
-The MAG(i)C Random Number Generator in Python relies on:
-* thing
+The MAG(i)C Random Number Generator in Java
 
-Keep in mind that you may have success running other versions, however it is not guaranteed to work.
+## Developing/Deploying Java for AppEngine
+The Google AppEngine plugin for Eclipse allows you to create appengine projects, test on a local appengine, and deploy to the cloud.
 
-## Installing Required Packages from Ubuntu Repositories
-To install the required packages, run the following in the terminal of your VM:
-```bash
-$ apt update
-$ sudo apt install
-```
+### Setting up Eclipse
+To setup Eclipse for developing for AppEngine, refer to the following instructions provided by Google https://cloud.google.com/eclipse/docs/quickstart
 
-## Developing with Java for AppEngine
-Use the following guide to configure Eclipse for Java AppEngine development and deployment: https://cloud.google.com/eclipse/docs/quickstart
-This guide runs through the process of creating a new App Engine project: https://cloud.google.com/eclipse/docs/creating-new-webapp
+### Creating the Project
+A sample Hello World project can be created by following the instructions here: https://cloud.google.com/eclipse/docs/creating-new-webapp
+Further development steps can be found in the pages that follow.
 
-You should now be able to access the website!
-```url
-http://yourdomain_or_ip/
-```
+### Using Our Java AppEngine Project
+After cloning the repository, set the root of the repo as the workspace for Eclipse. The project should be available to work with.
 
-## Troubleshooting
-Please look in the following locations for error/connection logs:
-```bash
-$ sudo command wow
-```
+### Testing on a Local AppEngine
+Once you have created a sample project or cloned ours, you can run the project in Eclipse. You will have the option to use a server or run on appengine. Select Run on AppEngine to run the program on a local appengine (running from your device). Eclipse will launch a built-in webbrowser to the homepage. You can copy the web address and use it in your browser of choice.
+
+### Deploying to AppEngine
+Follow the steps at https://cloud.google.com/eclipse/docs/deploying for deploying to a standard appengine
