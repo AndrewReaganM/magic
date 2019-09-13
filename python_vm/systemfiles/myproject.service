@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI instance to serve myproject
+After=network.target
+
+[Service]
+User=amassey107
+Group=www-data
+WorkingDirectory=/home/amassey107/magic/python_vm
+Environment="PATH=/home/amassey107/magic/python_vm/myprojectenv/bin"
+ExecStart=/home/amassey107/magic/python_vm/myprojectenv/bin/uwsgi --ini myproject.ini
+
+[Install]
+WantedBy=multi-user.target

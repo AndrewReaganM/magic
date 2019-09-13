@@ -1,0 +1,10 @@
+server {
+	listen 80;
+	server_name pyvm.andrewreaganm.me www.pyvm.andrewreaganm.me;
+
+	location / {
+        include uwsgi_params;
+        uwsgi_pass unix:/home/amassey107/magic/python_vm/myproject.sock;
+    }
+
+}
