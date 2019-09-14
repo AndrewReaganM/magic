@@ -267,7 +267,7 @@ Remove the homepage
   Select Undeploy for that record
   
 Set your application to run at `/`
-  SSH into the server and access the file <catalina_home>/conf/Catalina/server.xml
+  SSH into the server and access the file `/opt/tomcat/conf/server.xml`
   Add the following line at the end of `<Host>` tags
   ```
   <Context path="" docBase="<your_web_app_name>"></Context>
