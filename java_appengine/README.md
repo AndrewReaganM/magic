@@ -43,7 +43,8 @@ Create a new App Engine Standard Project
   Select the `Google Cloud Engine` contextual menu and the choose `Create New Project -> Google App Engine Standard Java Project...`
 
 Clean default files out of project
-  Delete `src/test`
+  Delete `src/test/java/HelloAppEngineTest.java`
+  Delete `src/test/java/MockHttpServletResponse.java`
   Delete `src/main/java/HelloAppEngine.java`
   Delete `src/main/webapp/index.html`
   Open `src/main/webapp/WEB-INF/web.xml`
