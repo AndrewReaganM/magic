@@ -253,7 +253,7 @@ Access the TomCat Manager at http://<your_server>/manager/html
   You will be asked to login, use the credentials you specified in the [Set up Tomcat Web Interface](#set-up-tomcat-web-interface)
 
 Find the section labeled `WAR file to deploy`
-  Browse for the WAR file you exported in the previous section
+  Browse for the [WAR](https://github.com/AndrewReaganM/magic/blob/master/java_vm/java_vm.war)
   Click `Deploy`
   
 You webapp will now be accessible through the url http://<your_server>/<web_app_name>
