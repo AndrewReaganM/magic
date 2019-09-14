@@ -11,8 +11,8 @@ The software include in this repository meets the following requirements:
 #### Google App Engine
 When implemented on Google App Engine, the site auto-scales to accommodate for the load that the site is experiencing. This is desirable, however be aware that if the site starts experiencing lots of traffic, that it will start to cost more money. It might be a good idea to set a daily spending limit to prevent any problems from arising.
 
-[Java AppEngine Instance](software-engineering-250801.appspot.com)  
-[Python AppEngine Instance](capstoneproject-251917.appspot.com)
+[Java AppEngine Instance](http://software-engineering-250801.appspot.com)  
+[Python AppEngine Instance](http://capstoneproject-251917.appspot.com)
 
 #### Google Compute VM
 Setup for Google Compute VMs is much more involved than that of App Engine, however it is easier to predict costs and optimize the server as all aspects of the server are configurable.
