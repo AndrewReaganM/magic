@@ -147,7 +147,7 @@ To manage our tomcat installation, we must create a user for the web interface:
 ```bash
 $ sudo nano /opt/tomcat/conf/tomcat-users.xml
 ```
-Add the following line in between the `tomcat-users>` tags:
+Add the following line in between the `<tomcat-users>` tags:
 ```
 <user username="admin" password="password" roles="manager-gui,admin-gui"/>
 ```
@@ -181,14 +181,99 @@ Now, try logging into the server by accessing the homepage, selecting "Manager A
 http://server-ip-domain:8080
 ```
 
-## Installing the Webpage
-this is .WAR
-```JAVA
-public static void placeholderText(){
+## Creating the WebApp
+The Google AppEngine plugin for Eclipse, while meant for working with appengine, makes it convenient to develop for TomCat as well.
 
-  // thx Connor
+### Installing Google Cloud SDK
+To install the Cloud SDK, using [Google's Documentation](https://cloud.google.com/sdk/docs/).
+
+The SDK will need java appengine features installed
+  Run the command `gcloud components install app-engine-java` from the Google Cloud SDK Shell
+
+### Setting up Eclipse
+This guide assumes you are using a new install of Eclipse 2019-06 for Java Developers. This section is the same as the `Setting up Eclipse` section for the Java AppEngine. If you have already followed those steps, you can skip this section.
+
+Eclipse needs addons installed to support web development. Do this by going to Help -> Install New Software
+For the `Work with:` input, select "2019-06 - http://download.eclipse.org/releases/2019-06"
+Expand "Web, XML, Java EE, and OSGi Enterprise Development"
+Select the following 3 packages:
+  `Eclipse Java EE Developoer Tools`
+  `Eclipse Java Web Developer Tools`
+  `Eclipse Web Developer Tools`
+Click `Finish`, wait for the packages to install, then restart eclipse
+
+Install the Google Cloud Tools for Eclipse: [Instructions](https://cloud.google.com/eclipse/docs/quickstart#installing)
+Restart eclipse after installation
+  
+### Creating the Project
+A sample Hello World project can be created by following the [instructions](https://cloud.google.com/eclipse/docs/creating-new-webapp)
+Further development steps can be found in the pages that follow.
+
+Create a new App Engine Standard Project
+  Select the `Google Cloud Engine` contextual menu and the choose `Create New Project -> Google App Engine Standard Java Project...`
+
+Clean default files out of project
+  Delete `src/test/java/HelloAppEngineTest.java`
+  Delete `src/test/java/MockHttpServletResponse.java`
+  Delete `src/main/java/HelloAppEngine.java`
+  Delete `src/main/webapp/index.html`
+  Open `src/main/webapp/WEB-INF/web.xml`
+    Remove `welcome-file-list` and save the file
+
+Create a new servlet
+  Right click `src/main/java` and choose `New -> Other...`
+  From the menu, choose `Web -> Servlet`
+  Give the servlet a name and click `Finish`
+  
+Clean up the new servlet
+  Delete the constructor
+  Delete doPost(...)
+  
+Configure the servlet
+  Change the line `@WebServlet("/YourServletName")` to `@WebServlet("/")`
+  Make doGet(...) write a random number to response
+```Java
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+  response.setContentType("text/plain");
+  response.setCharacterEncoding("UTF-8");
+
+  Random rand = new Random();
+  response.getWriter().print(rand.nextInt(999999)+1);
 }
 ```
+
+Create the .WAR file
+  Once the webapp is finished and ready to be deployed, right click on the project and select `Export -> WAR file`
+  Select your project from the list if it is not already selected
+  Choose where you want to export the project to
+  Uncheck the box `Optimize for a specific runtime`
+
+## Uploading and Configuring the WebApp
+Access the TomCat Manager at http://<your_server>/manager/html
+  You will be asked to login, use the credentials you specified in the [Set up Tomcat Web Interface](#set-up-tomcat-web-interface)
+
+Find the section labeled `WAR file to deploy`
+  Browse for the WAR file you exported in the previous section
+  Click `Deploy`
+  
+You webapp will now be accessible through the url http://<your_server>/<web_app_name>
+  You can also find a link in the `Applications` table
+  
+### Run the WebApp at the Root
+We want the webapp to be accessible at http://<your_server> instead of http://<your_server>/<web_app_name>
+
+Remove the homepage
+  Find the application with the path `/` in the Applications table
+  Select Undeploy for that record
+  
+Set your application to run at `/`
+  SSH into the server and access the file <catalina_home>/conf/Catalina/server.xml
+  Add the following line at the end of `<Host>` tags
+  ```
+  <Context path="" docBase="<your_web_app_name>"></Context>
+  ```
+
+Restart the VM and your webapp will now be accessible at http://<your_server>/
 
 ## Troubleshooting
 Please see the Tomcat documentation for troubleshooting steps.
