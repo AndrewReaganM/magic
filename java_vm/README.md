@@ -1,7 +1,5 @@
 # MAG(i)C Random in Java on Ubuntu 18.04 LTS
-
-## Overview
-The Java version of MAG(i)C Random runs on Apache Tomcat, a web server and application server written in Java.
+This is a simple overview of how a functioning implementation of the random number generator was achieved using Java. Most of the guidance on how to do this was from the DigitalOcean article on how to set up Tomcat on Ubuntu 18.04 LTS, located here: [DigitalOcean and Flask](https://www.digitalocean.com/community/tutorials/install-tomcat-9-ubuntu-1804)
 
 ## Prerequisites
 * Ubuntu 18.04 LTS server
