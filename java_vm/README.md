@@ -5,14 +5,12 @@ The Java version of MAG(i)C Random runs on Apache Tomcat, a web server and appli
 
 ## Prerequisites
 * Ubuntu 18.04 LTS server
-* Java 1.11.0
 
 ## Software Versions
 The MAG(i)C Random Number Generator in Python relies on:
 * Ubuntu 18.04 LTS
 * Java 1.11.0 (OpenJDK)
 * Tomcat 9
-*
 
 Keep in mind that you may have success running other versions, however it is not guaranteed to work.
 
@@ -31,7 +29,7 @@ $ sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
 ```
 
 ## Installing Tomcat
-To install Tomcat, first get the link to the latest Tomcat Binary Distribution Core with a `.tar.gz` file extension. Then run the following bash script:
+To install Tomcat, first get the link to the latest Tomcat Binary Distribution Core with a `.tar.gz` file extension. Then run the following in your terminal:
 ```bash
 $ cd /tmp
 $ curl -O <link-to-tar.gz>
@@ -42,7 +40,7 @@ $ sudo mkdir /opt/tomcat
 $ sudo tar xzvf apache-tomcat-9*tar.gz -C /opt/tomcat --strip-components=1
 ```
 ## Folder Permissions
-We need to give the previously created `tomcat` user permissions to the installation directory.
+We need to give the previously created `tomcat` user permissions to the installation directory. Do this by running the following commands:
 ```bash
 $ cd /opt/tomcat
 $ sudo chgrp -R tomcat /opt/tomcat
@@ -51,7 +49,7 @@ $ sudo chmod g+x conf
 $ sudo chown -R tomcat webapps/ work/ temp/ logs/
 ```
 ## Create a System Service File (tomcat.service)
-To run Tomcat as a service so that it will run on boot, we need to create a systemd service file. To do this, first find the location of your Java installation, or `JAVA_HOME`. Specifically, you want the one that was installed in the first step, which starts with `/usr/lib/jvm/java...`.
+To add Tomcat as a service so that it will start on boot, we need to create a systemd service file. To do this, first find the location of your Java installation, or `JAVA_HOME`. Specifically, you want the one that was installed in the first step whose path starts with `/usr/lib/jvm/...`.
 ```bash
 $ sudo update-java-alternatives -l
 ```
@@ -89,7 +87,7 @@ WantedBy=multi-user.target
 ```
  Now close the file and select save.
 
- Now that we have a new service file, we need to reload `systemctl`.
+ Now that we have a new service file, we need to reload `systemctl` and start the `tomcat` service.
 
  ```sudo
 $ sudo systemctl daemon-reload
@@ -109,14 +107,14 @@ The output of `status` should resemble:
 ```
 
 ## Set up the UFW and Google Cloud VPC Firewall Rules
-To allow external devices to communicate with the server, we need to create a couple of firewall rules. These need to be created in two places: The VM's built in firewall, and in the Google Cloud console under "VPC Network > Firewall rules".
+To allow external devices to communicate with the server, we need to create a couple of firewall rules. These need to be created in two places: The VM's built in firewall, and the Google Cloud console under "VPC Network > Firewall rules".
 
 To allow external access on the VM side, simply open the port with the following command:
 ```bash
 $ sudo ufw allow 8080
 ```
 
-To allow using GCP, see the documentation (here)[https://cloud.google.com/vpc/docs/using-firewalls], and use the following info:
+To allow using GCP, see the documentation [here](https://cloud.google.com/vpc/docs/using-firewalls), and use the following info, saving the rule after completion:
 ```
 name: <something-descriptive>
 network: default
@@ -132,12 +130,11 @@ Second source filter: none
 Protocols and ports: Specified protocols and ports
   tcp: 8080
 ```
-Then, click save.
 
-Now, in the Compute Engine Instance dashboard, select your instance and edit it. Under Network Tags, add "tomcat-admin" and click save.
+Now, in the Compute Engine Instance dashboard, select the instance used for Tomcat and edit it. Under Network Tags, add "tomcat-admin" and click save.
 
 
-Now, try accesing the Tomcat homepage using the following link format.
+Now, try accesing the Tomcat homepage using the following link format:
 ```bash
 http://server-ip-domain:8080
 ```
@@ -147,25 +144,53 @@ If the Tomcat homepage did not load, you need to troubleshoot before proceeding.
 $ sudo systemctl enable tomcat
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Troubleshooting
-Please look in the following locations for error/connection logs:
+## Set up Tomcat Web Interface
+To manage our tomcat installation, we must create a user for the web interface:
 ```bash
-$ sudo command wow
+$ sudo nano /opt/tomcat/conf/tomcat-users.xml
+```
+Add the following line in between the `tomcat-users>` tags:
+```
+<user username="admin" password="password" roles="manager-gui,admin-gui"/>
+```
+Make sure to set a username and password that is secure. Note that the username `admin` is a locked username, so you must use a different one.
+
+To allow remote administration of the Tomcat server edit both of the following files as indicated below:
+```bash
+$ sudo nano /opt/tomcat/webapps/manager/META-INF/context.xml
+
+# and after
+
+$ sudo nano /opt/tomcat/webapps/host-manager/META-INF/context.xml
 ```
 
-##
+Edit the files by commenting out the IP restriction as follows:
+```
+# Example provided by DigitalOcean
+<Context antiResourceLocking="false" privileged="true" >
+  <!--<Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />-->
+</Context>
+```
+
+Now that both of those files have been changed, restart Tomcat.
+```bash
+$ sudo systemctl restart tomcat
+```
+
+Now, try logging into the server by accessing the homepage, selecting "Manager App" and using the username and password set previously:
+```bash
+http://server-ip-domain:8080
+```
+
+## Installing the Webpage
+this is .WAR
+```JAVA
+public static void placeholderText(){
+
+  // thx Connor
+}
+```
+
+## Troubleshooting
+Please see the Tomcat documentation for troubleshooting steps.
