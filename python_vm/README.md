@@ -1,6 +1,4 @@
 # MAG(i)C Random in Python on Ubuntu 18.04 LTS
-
-## Overview
 This is a simple overview of how a functioning implementation of the random number generator was achieved. Most of the guidance on how to do this was from the DigitalOcean article on how to set up Flask, uWSGI, and Nginx on Ubuntu 18.04 LTS, located here: [DigitalOcean and Flask](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uswgi-and-nginx-on-ubuntu-18-04)
 
 ## Prerequisites
