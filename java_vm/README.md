@@ -55,8 +55,9 @@ Copy the whole path of the folder. Now create the service file using `nano`.
 ```bash
 $ sudo nano /etc/systemd/system/tomcat.service
 ```
-Below is the contents of the service file for Tomcat. This template is from DigitalOcean's website.
+Below is the contents of the service file for Tomcat. This template is from DigitalOcean's guide.
 ```
+# Template provided by DigitalOcean
 [Unit]
 Description=Apache Tomcat Web Application Container
 After=network.target
