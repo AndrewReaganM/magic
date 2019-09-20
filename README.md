@@ -18,7 +18,8 @@ When implemented on Google App Engine, the site auto-scales to accommodate for t
 Setup for Google Compute VMs is much more involved than that of App Engine, however it is easier to predict costs and optimize the server as all aspects of the server are configurable.
 
 [Java Compute VM Instance](http://javm.andrewreaganm.me/)  
-[Python Compute VM Instance](http://pyvm.andrewreaganm.me)
+[Python Compute VM Instance - Europe](https://europe.mag-i-c.com)
+[Python Compute VM Instance - US Central](https://centralus.mag-i-c.com)
 
 ## Language Specific Information
 #### Python
