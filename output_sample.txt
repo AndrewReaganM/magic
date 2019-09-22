@@ -1,0 +1,10 @@
+# Each server will be output on its own line
+# Start with the time. Pad the left side with spaces to make it 4 characters long
+# Add 'ms' as the unit
+# Add ' - ' after 'ms'
+# Add the URL or IP Address of the server being tested
+ 172ms - https://software-engineering-250801.appspot.com/
+   9ms - https://capstoneproject-251917.appspot.com/
+  53ms - https://europe.mag-i-c.com/
+   2ms - https://centralus.mag-i-c.com/
+  16ms - http://javavm.mag-i-c.com/
