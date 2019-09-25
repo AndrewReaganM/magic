@@ -1,6 +1,9 @@
 sites:
-    - https://software-engineering-250801.appspot.com/
-    - https://capstoneproject-251917.appspot.com/
-    - https://europe.mag-i-c.com/
-    - https://centralus.mag-i-c.com/
-    - http://javavm.mag-i-c.com/
+    - us-central_*_app_Java@https://software-engineering-250801.appspot.com/
+    - us-central_*_app_Java@https://capstoneproject-251917.appspot.com/
+    - europe-west3_c_VM_Python@https://europe.mag-i-c.com/
+    - us-central_a_VM_Python@https://centralus.mag-i-c.com/
+    - us-central_a_VM_Java@http://javavm.mag-i-c.com/
+    - asia-east1_b_VM_Python@https://eastasia.mag-i-c.com/
+    - asia-east1_b_VM_Java@http://eastasiajava.mag-i-c.com
+    - asia-east2_*_app_Python@https://adept-storm-254017.appspot.com
