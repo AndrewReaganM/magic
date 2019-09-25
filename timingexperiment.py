@@ -5,7 +5,6 @@ import yaml
 def getURL(url):
     return url.split('@')[1]
 
-
 def readURL(url):
     start_time = time.time()
     f = urlopen(url)
@@ -19,8 +18,8 @@ docs = yaml.load(stream, Loader=yaml.FullLoader)
 outputfile = open("outputfile.txt", "w")
 
 for doc in docs['sites']:
-    print(doc, end=' ')
+    outputfile.write(doc + " ")
     try:
-        print(readURL(getURL(doc)))
+        outputfile.write(readURL(getURL(doc)) + "\n")
     except Exception as e:
-        print(e.__class__.__name__ + " raised on " + doc)
+        outputfile.write(e.__class__.__name__ + " raised on " + doc + "\n")
