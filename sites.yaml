@@ -5,5 +5,5 @@ sites:
     - us-central_a_VM_Python@https://centralus.mag-i-c.com/
     - us-central_a_VM_Java@http://javavm.mag-i-c.com/
     - asia-east1_b_VM_Python@https://eastasia.mag-i-c.com/
-    - asia-east1_b_VM_Java@http://eastasiajava.mag-i-c.com
+    - asia-east1_b_VM_Java@http://eastasiajava.mag-i-c.com/
     - asia-east2_*_app_Python@https://adept-storm-254017.appspot.com/
