@@ -1,0 +1,39 @@
+us-central_a_VM_Python@https://centralus.mag-i-c.com/ 218ms  530922
+us-central_a_VM_Java@http://javavm.mag-i-c.com/ 95ms  829243
+us-central_*_app_Java@https://software-engineering-250801.appspot.com/ 162ms  808220
+us-central_*_app_Java@https://capstoneproject-251917.appspot.com/ 148ms  762374
+asia-east1_b_VM_Python@https://eastasia.mag-i-c.com/ 756ms  739617
+asia-east1_b_VM_Java@http://eastasiajava.mag-i-c.com/ 406ms  249881
+asia-east2_*_app_Python@https://adept-storm-254017.appspot.com/ 1411ms  546263
+asia-east2_*_app_Java@https://timing-experiment-2.appspot.com/ 364ms  135828
+us-east1_b_VM_Python@35.237.232.176 ValueError raised on us-east1_b_VM_Python@35.237.232.176
+us-east1_b_VM_Java@http://35.196.181.146:8080/randnum/hello 108ms  62926
+asia-northeast1_a_app_Python@http://regions-254017.appspot.com/ 199ms  863052
+asia-northeast1_a_VM_Python@34.84.95.192 ValueError raised on asia-northeast1_a_VM_Python@34.84.95.192
+asia-south1_c_AppEngine_Python@https://timing-experiment-cs4263.appspot.com/ 400ms  986698
+asia-northeast1_a_app_Java@https://glass-pen-254017.appspot.com ValueError raised on asia-northeast1_a_app_Java@https://glass-pen-254017.appspot.com
+asia-south-1_a_VM_Java@http://34.93.76.51:8080/rng/ 748ms  324284
+asia-northeast1_b_VM_Java@http://34.85.71.249:8080/random/hello.jsp ValueError raised on asia-northeast1_b_VM_Java@http://34.85.71.249:8080/random/hello.jsp
+australiasoutheast1_b_vm_java@http://35.189.39.14/randnum/randnum 383ms  217177
+australiasoutheast1_b_vm_python@35.189.43.96:5000 URLError raised on australiasoutheast1_b_vm_python@35.189.43.96:5000
+australiasoutheast1_b_app_java@galvanic-ward-254017.appspot.com ValueError raised on australiasoutheast1_b_app_java@galvanic-ward-254017.appspot.com
+australiasoutheast1_b_app_python@http://python-aus.appspot.com/ 1343ms  79693
+asia-south1_c_app_java@http://team-23-asia-southeast.appspot.com/ ValueError raised on asia-south1_c_app_java@http://team-23-asia-southeast.appspot.com/
+asia-northeast2_a_VM_Java@http://34.97.51.216:8080/number.jsp ValueError raised on asia-northeast2_a_VM_Java@http://34.97.51.216:8080/number.jsp
+europe-north1_c_VM_Python@http://35.228.86.47:5000/ 331ms  131557
+asia-northeast2_a_app_Python@http://rng-python-asiane2.appspot.com 725ms  377303
+us_central1_a_VM_Python@http://34.69.126.180/ 92ms  675384
+asia_east2_c_VM_Python@http://35.220.136.215/ 395ms  773096
+asia-southeast1_a_VM_Python@34.87.17.67/python/ ValueError raised on asia-southeast1_a_VM_Python@34.87.17.67/python/
+asia-southeast1_a_VM_Java@34.87.17.67/java/RandGen.shtml ValueError raised on asia-southeast1_a_VM_Java@34.87.17.67/java/RandGen.shtml
+asia-south1_c_AppEngine_Java@http://region-change.appspot.com/demo 325ms  748539
+southeast-australia-1_c_AppEngine_Python@https://cs-4263-1.appspot.com/ 308ms  503409
+asia-northeast_2a_VM_Python@http://34.97.25.195 329ms  258505
+asia_east2_app_Python@https://cs4263-rngtiming.appspot.com/ 1420ms  950353
+asia_east2_app_Java@https://javaproject1-254017.appspot.com/ ValueError raised on asia_east2_app_Java@https://javaproject1-254017.appspot.com/
+asia_east2_VM_Python@http://35.220.136.215/ 391ms  514002
+europe-west3_b_app_python@radom-timing-experiment.appspot.com ValueError raised on europe-west3_b_app_python@radom-timing-experiment.appspot.com
+europe-west3_b_app_java@java-dot-radom-timing-experiment.appspot.com ValueError raised on europe-west3_b_app_java@java-dot-radom-timing-experiment.appspot.com
+europe-west3_b_vm_Java@35.246.243.145 ValueError raised on europe-west3_b_vm_Java@35.246.243.145
+europe-west3_b_vm_Python@35.234.125.152 ValueError raised on europe-west3_b_vm_Python@35.234.125.152
+europe-west6_a_VM_Java_@http://34.65.30.164 URLError raised on europe-west6_a_VM_Java_@http://34.65.30.164
