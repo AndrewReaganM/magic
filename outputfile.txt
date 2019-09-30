@@ -1,5 +1,0 @@
-486ms - https://software-engineering-250801.appspot.com/
-915ms - https://capstoneproject-251917.appspot.com/
-5889ms - https://europe.mag-i-c.com/
-490ms - https://centralus.mag-i-c.com/
-Timeout Error on http://javavm.mag-i-c.com/
