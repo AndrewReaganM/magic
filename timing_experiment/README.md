@@ -13,7 +13,7 @@ The input file for the testing script timingexperiment.py is a YAML file that in
  ## Output file
  
 The script, timingexperiment.py will produce an output file which includes the timing results for each of the sites included in the input YAML file. 
-If an error occurs when testing a site, an error message of the form "ERROR on [Region]_[zone]_[VM|app]_[Java|Python]@1.2.3.4" will be logged. 
+If an error occurs when testing a site, an error message of the form "ERROR on [Region]\_[zone]\_[VM|app]\_[Java|Python]@1.2.3.4" will be logged. 
 
 The output for each site is in the form specified below:
  
