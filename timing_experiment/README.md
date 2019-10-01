@@ -6,7 +6,7 @@ This is an experiment for testing the timing of pseudo-random number generators.
 
 The input file for the testing script timingexperiment.py is a YAML file that inclues each site in the specified form shown below:
 
-[Region]_[zone]_[VM|app]_[Java|Python]@1.2.3.4
+[Region]\_[zone]\_[VM|app]\_[Java|Python]@1.2.3.4
   
  An example of an input file can be found at <magic/timing_experiment/external_sites.yaml>.
  
@@ -17,7 +17,7 @@ If an error occurs when testing a site, an error message of the form "ERROR on [
 
 The output for each site is in the form specified below:
  
-[Region]_[zone]_[VM|app]_[Java|Python]@1.2.3.4 time_in_milliseconds random_number_generated
+[Region]\_[zone]\_[VM|app]\_[Java|Python]@1.2.3.4 time_in_milliseconds random_number_generated
   
 The resulting output file produced from the input file mentioned in the "Input file" section of this document can be found at <magic/timing_experiment/outputfile.txt>.
   
